@@ -1,0 +1,23 @@
+//dino_allosaurus
+#include<stdio.h>
+/*
+題目規定x,y<=1000000000 ，
+因此如果硬把x5次方的話就算是long long int（10^18） 還是有可能溢出。
+所以我們採用一點數學技巧。
+學完高一數學的你應該很快就能判斷這樣算出來一定是正確的。
+提示：餘式定理。
+*/
+int main()
+{
+    long long int x = 0;
+    long long int y = 0;
+    long long int ans = 0;
+    scanf("%lld%lld",&x,&y);
+    ans = (2*x)%y*x%y*x%y*x%y*x%y;//2x^5
+    ans += ((4*x)%y*x%y*x%y);//4x^3
+    ans = ans%y;
+    ans += (7%y);//7
+    ans = ans%y;
+    printf("%lld\n",ans);
+return 0;
+}
