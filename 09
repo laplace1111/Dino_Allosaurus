@@ -1,0 +1,20 @@
+//dino_allosaurus
+#include<stdio.h>
+#include<ctype.h>
+/*
+這題有兩種寫法，第一種寫法是判斷第一個字母的ASCII Code是否小於97（a）
+第二種寫法是利用<ctype.h>這個函數庫裏提供的判斷函數來寫。
+因爲本人很懶，所以_(:3J∠)_
+*/
+int main()
+{
+    char s[12];
+    scanf("%s",&s);
+    if(isupper(s[0]))
+        printf("YES\n");
+    else
+        printf("No\n");
+
+
+return 0;
+}
